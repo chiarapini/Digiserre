@@ -1,0 +1,105 @@
+/*DEFAULT ALL*/
+*,*:before,*:after{
+  margin: 0; padding: 0;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html,body{width:100%; height:100%;
+         font-family: 'Lato', sans-serif;
+         font-weight:700;
+}
+
+input {
+  padding: 10px 10px;
+  width:80%;
+  font-size: 18px;
+}
+
+div {margin: 20px 0px ;}
+
+button{
+    padding:10px 20px;
+    border-radius: 4px;
+    background-color: #e6b800;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 4px 2px;
+    cursor: pointer;
+    border:none;
+}
+
+button:hover {
+    background-color: black; /* Green */
+    color: #e6b800;
+}
+
+.dashboard, .control, .data {
+  font-size:30px;
+  font-weight: bold;
+  margin: 5%;
+}
+
+.setValues {
+  margin-bottom: 100px;
+}
+
+em {
+  font-style: normal;
+  color: #e6b800;
+}
+
+#salut {
+  margin-top: 30px;
+  color:#e6b800;
+  text-decoration: none;
+}
+
+h2 {
+  margin-top: 30px;
+  color: black;
+  text-decoration: underline;
+}
+
+/* unvisited link */
+a {
+    color: #e6b800;
+    
+}
+
+.control a{
+  font-size:16px;
+}
+
+@media only screen and (max-width: 768px){
+  .dashboard, .control, .data {
+  font-size:22px;
+  font-weight: bold;
+  margin: 3%;
+}
+
+.control p{
+  font-size:18px;
+}
+.control h2,.control h3, .data h2 {
+  font-size:22px;
+}
+button{
+    padding:5px 10px;
+    font-size: 12px;
+    margin: 4px 2px;
+}
+input {
+  padding: 5px 5px;
+  font-size: 12px;
+}
+.setValues {
+  margin-bottom: 40px;
+}
+
+}
+

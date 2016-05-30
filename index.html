@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>DigiSerre</title>
+    <script src="libraries/p5.js" type="text/javascript"></script>
+    <script type="text/javascript" src="libraries/d3.min.js"></script>
+    <script src="libraries/p5.dom.js" type="text/javascript"></script>
+
+    <script src="config.js" type="text/javascript"></script>
+    <script src="loadData.js" type="text/javascript"></script>
+    <script src="sketch.js" type="text/javascript"></script>
+    <script src="graph.js" type="text/javascript"></script>
+    
+    <link href='https://fonts.googleapis.com/css?family=Lato:700' rel='stylesheet' type='text/css'>
+    
+    <meta name="viewport" content="user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1,width=device-width">
+    <link rel="stylesheet" href="style.css"/>
+  </head>
+  <body>
+    <div class="dashboard">
+    <h2 id="salut">Hello</h2>
+    <p>Welcome to your DigiSerre! <br> It's <em id="now">xxx</em> and the temperature inside your DigiSerre is <em id="temp">xxx</em>. 
+    Fans are <em id="fanState">ON</em> because you need an optimal temperature of <a href="#tempSet"><em id=tempReq>xxx</em></a> for your plants.
+    It's <em id="weather">xxx</em> and your plants still need <a href="#lightSet"><em id="reqLight">xxx</em></a> of light. 
+    The pump is <em id="pumpState">OFF</em> because your soil humidity is about <em id="moisture">xxx</em>. 
+    Lights are <em id = "ledOn">xxx</em> because your plant <em id="ledFeedback">xxx</em>.</p>
+    </div>
+    
+    <div class="control">
+      <h2> Dashboard</h2>
+        <div class= "setValues">
+          <h3><em>> </em>Simulate any time of the day</h3>
+          <div><input type="text" id="set_desired_time" value="" placeholder="Set desired time of the day"/>
+          <button id="submit" class="buttonstyle">Submit</button>
+          </div>
+          <div>
+          <button id="resettime_s" class="buttonstyle">Reset</button>
+          </div>
+          <a href="#salut">Back to top </a>
+        </div>
+        <div class= "setValues">
+          <h3 id="lightSet"> <em>> </em> Hours of light </h3>
+          <p> Choose how much light time do you need for your plant</p>
+          <div> <input type="text" id="set_desired_light" value="" placeholder="Set desired light hours"/>
+          <button id="send_desired_light" class="buttonstyle">Submit</button>
+          </div>
+          <a href="#salut">Back to top </a>
+        </div>
+        <div class= "setValues">
+          <h3 id = "tempSet"><em>> </em> Choose desired temperature </h3>
+          <div> <input type="text" id="set_desired_temp" value="" placeholder="Set desired temperature"/>
+          <button id="sendtemp" class="buttonstyle">Submit</button>
+          </div>
+          <a href="#salut">Back to top </a>
+        </div>
+    </div>
+    <div class="data">
+    <h2> Live data</h2>
+    </div>
+  </body>
+</html>
