@@ -141,77 +141,15 @@ function dashboard() {
 }
 
 function drawGraph() {
-  //create array for times
-  if (times.length >= 1+int(w/step)) {
-        times.splice(0, 1);
-      }
-  append(times, time);
-  
-  //create array for lightvals (and time)
-  if (lightvals.length >= 1 + int(w / step)) {
-    lightvals.splice(0, 1);
-  }
-  append(lightvals, lightval);
-  
-  //create array for temperatures
-  if (temperatures.length >= 1 + int(w / step)) {
-      temperatures.splice(0, 1);
-    }
-    append(temperatures, temperature);
-    
-  //create array for humidities
-  if (humidities.length >= 1 + int(w / step)) {
-      humidities.splice(0, 1);
-    }
-    append(humidities, humidity);
+  light_graph = new Graph(lightval, lightvals, 0, 0, 2300, 100, "light",230,230,0);
+  temp_graph = new Graph(temperature, temperatures, 0, 1 * (h + 2 * margin), 40, 110, "temperature",255,50,0);
+  humidity_graph = new Graph(humidity, humidities, 0, 2 * (h + 2 * margin), 100, 60, "humidity",0,0,230);
   
   background(255);
   //Draw graph structure for each loop
   light_graph.display();
   temp_graph.display();
   humidity_graph.display();
-
-  //light graph Data
-  push();
-  translate(margin, margin + padding);
-  for (var i = 1; i < lightvals.length; i++) {
-    val = map(lightvals[i], 0, 2300, 200, 0);
-    valPrec = map(lightvals[i - 1], 0, 2300, 200, 0);
-    stroke(230, 230, 0);
-    line((i - 1) * step, valPrec, i * step, val);
-    noStroke();
-    fill(230, 230, 0);
-    ellipse(i * step, val, 5, 5);
-  }
-  pop();
-
-  //temperature graph Data
-  push();
-  translate(margin, margin + padding+temp_graph.y);
-  for (var i = 1; i < temperatures.length; i++) {
-    val = map(temperatures[i], 0, 40, 200, 0);
-    valPrec = map(temperatures[i - 1], 0, 40, 200, 0);
-    stroke(255, 0, 0);
-    line((i - 1) * step, valPrec, i * step, val);
-    noStroke();
-    fill(255, 0, 0);
-    ellipse(i * step, val, 5, 5);
-  }
-  pop();
-
-  //humidity graph Data
-  push();
-  translate(margin, margin + padding+humidity_graph.y);
-  for (var i = 1; i < humidities.length; i++) {
-    val = map(humidities[i], 0, 4000, 200, 0);
-    valPrec = map(humidities[i - 1], 0, 4000, 200, 0);
-    stroke(0, 0, 255);
-    line((i - 1) * step, valPrec, i * step, val);
-    noStroke();
-    fill(0, 0, 255);
-    ellipse(i * step, val, 5, 5);
-  }
-  pop();
 }
 
 function control() {
