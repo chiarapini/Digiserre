@@ -137,9 +137,9 @@ function drawGraph() {
   
   background(255);
   //Draw graph structure for each loop
-  light_graph.display();
-  temp_graph.display();
-  humidity_graph.display();
+  light_graph.displayData();
+  temp_graph.displayData();
+  humidity_graph.displayData();
 }
 
 function control() {
