@@ -50,16 +50,6 @@ function setup() {
  
   w = windowWidth - 100; //responsive graph width
 
-  // new object: graphs
-  light_graph = new Graph(0, 0, 2300, 100, "light",230,230,0);
-  temp_graph = new Graph(0, 1 * (h + 2 * margin), 40, 110, "temperature",255,50,0);
-  humidity_graph = new Graph(0, 2 * (h + 2 * margin), 100+"%", 60, "humidity",0,0,230);
-  
-  //display graphs when the window is loaded
-  light_graph.display();
-  temp_graph.display();
-  humidity_graph.display();
-
   //HTML BUTTON CONTROL
   var required_time = select('#submit'); // choose your time (for testing)
   required_time.mousePressed(function() {
