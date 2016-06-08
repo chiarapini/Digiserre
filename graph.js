@@ -1,5 +1,6 @@
-
-function Graph(x, y,maxValue, limit, name,r,g,b) {
+function Graph(value, array, x, y,maxValue, limit, name,r,g,b) {
+  this.value = value;
+  this.array = array;
   this.y = y;
   this.x = x;
   this.maxValue = maxValue;
@@ -40,4 +41,23 @@ function Graph(x, y,maxValue, limit, name,r,g,b) {
     pop();
     pop();
   }
+  this.displayData = function() {
+    this.display();
+    if (this.array.length >= int(w / step)) {
+        this.array.splice(0, 1);
+      }
+    this.array.push(this.value);
+    push();
+      translate(margin, margin + padding+y);
+      for (var i = 1; i < this.array.length; i++) {
+        val = map(this.array[i], 0, maxValue, 200, 0);
+        valPrec = map(this.array[i - 1], 0, maxValue, 200, 0);
+        stroke(r, g, b);
+        line((i - 1) * step, valPrec, i * step, val);
+        noStroke();
+        fill(r, g, b);
+        ellipse(i * step, val, 5, 5);
+  }
+  pop();
+   }
 }
